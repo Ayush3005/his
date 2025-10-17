@@ -26,9 +26,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-
+import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import FormatColorTextIcon from "@mui/icons-material/FormatColorText";
 const mainItems = [
-  { title: "Dashboard", url: "/dashboard", icon: DashboardIcon },
+  { title: "Dashboard", url: "/", icon: DashboardIcon },
   { title: "Patients", url: "/patients", icon: PeopleIcon },
   { title: "Practitioners", url: "/practitioners", icon: LocalHospitalIcon },
   { title: "Encounters", url: "/encounters", icon: AssignmentIcon },
@@ -44,11 +48,67 @@ const systemItems = [
 ];
 
 export default function AppSidebar() {
+  const [fontScale, setFontScale] = useState(1.2);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--font-scale",
+      fontScale.toString()
+    );
+  }, [fontScale]);
+
+  function increaseFont() {
+    if (fontScale < 2) {
+      setFontScale((prev) => Math.min(prev + 0.1, 2));
+      console.log(fontScale, "increased");
+    }
+  }
+  function decreaseFont() {
+    if (fontScale >= 1) {
+      setFontScale((prev) => Math.max(prev - 0.1, 0.5));
+      console.log(fontScale, "decreased");
+    }
+  }
+  function resetFont() {
+    setFontScale(1.2);
+    console.log(fontScale, "reset");
+  }
+
   return (
     <Sidebar variant="floating">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Health Information System</SidebarGroupLabel>
+          <div className="flex items-center justify-between pr-2">
+            <SidebarGroupLabel>Health Information System</SidebarGroupLabel>
+
+            {/* Font control buttons beside the label */}
+            <div className="flex gap-1">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={increaseFont}
+                className="h-4 w-4"
+              >
+                <AddIcon fontSize="small"/>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={resetFont}
+                className="h-4 w-4"
+              >
+                <FormatColorTextIcon fontSize="small"/>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={decreaseFont}
+                className="h-4 w-4"
+              >
+                <RemoveIcon fontSize="small"/>
+              </Button>
+            </div>
+          </div>
           <SidebarGroupContent>
             <SidebarMenu>
               {mainItems.map((item) => (

@@ -3,7 +3,6 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
-import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -40,6 +39,8 @@ type SidebarContextProps = {
   setOpenMobile: (open: boolean) => void;
   isMobile: boolean;
   toggleSidebar: () => void;
+  side: "left" | "right";
+  setSide: React.Dispatch<React.SetStateAction<"left" | "right">>;
 };
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null);
@@ -57,6 +58,7 @@ function SidebarProvider({
   defaultOpen = true,
   open: openProp,
   onOpenChange: setOpenProp,
+  defaultSide = "left",
   className,
   style,
   children,
@@ -65,6 +67,7 @@ function SidebarProvider({
   defaultOpen?: boolean;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  defaultSide?: "left" | "right";
 }) {
   const isMobile = useIsMobile();
   const [openMobile, setOpenMobile] = React.useState(false);
@@ -88,6 +91,7 @@ function SidebarProvider({
     [setOpenProp, open]
   );
 
+  const [side, setSide] = React.useState<"left" | "right">(defaultSide);
   // Helper to toggle the sidebar.
   const toggleSidebar = React.useCallback(() => {
     return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open);
@@ -122,8 +126,20 @@ function SidebarProvider({
       openMobile,
       setOpenMobile,
       toggleSidebar,
+      side,
+      setSide,
     }),
-    [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
+    [
+      state,
+      open,
+      setOpen,
+      isMobile,
+      openMobile,
+      setOpenMobile,
+      toggleSidebar,
+      side,
+      setSide,
+    ]
   );
 
   return (
@@ -152,7 +168,6 @@ function SidebarProvider({
 }
 
 function Sidebar({
-  side: initialSide = "left",
   variant = "sidebar",
   collapsible = "offcanvas",
   className,
@@ -163,8 +178,8 @@ function Sidebar({
   variant?: "sidebar" | "floating" | "inset";
   collapsible?: "offcanvas" | "icon" | "none";
 }) {
-  const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
-  const [side, setSide] = useState<"left" | "right">(initialSide);
+  const { isMobile, state, openMobile, setOpenMobile, side, setSide } =
+    useSidebar();
   const toggleSide = () => {
     setSide((prev) => (prev === "left" ? "right" : "left"));
   };
@@ -198,6 +213,23 @@ function Sidebar({
           }
           side={side}
         >
+          {side === "left" ? (
+            <ChevronRightIcon
+              role="button"
+              onClick={toggleSide}
+              aria-label="Toggle sidebar side"
+              tabIndex={0}
+              className="absolute top-1/2 -translate-y-1/2 -right-2 z-50 h-5 w-5 cursor-pointer rounded-full bg-background/70 backdrop-blur-sm p-1 shadow-md hover:bg-accent hover:text-accent-foreground hover:shadow-lg hover:scale-110 transition-all"
+            />
+          ) : (
+            <ChevronLeftIcon
+              role="button"
+              onClick={toggleSide}
+              aria-label="Toggle sidebar side"
+              tabIndex={0}
+              className="absolute top-1/2 -translate-y-1/2 -left-2 z-50 h-5 w-5 cursor-pointer rounded-full bg-background/70 backdrop-blur-sm p-1 shadow-md hover:bg-accent hover:text-accent-foreground hover:shadow-lg hover:scale-110 transition-all"
+            />
+          )}
           <SheetHeader className="sr-only">
             <SheetTitle>Sidebar</SheetTitle>
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
@@ -753,5 +785,6 @@ export {
   SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
+  // eslint-disable-next-line react-refresh/only-export-components
   useSidebar,
 };
