@@ -1,0 +1,25 @@
+{
+  "groupLabels": {
+    "main": "Health Information System",
+    "system": "System"
+  },
+  "mainItems": [
+    { "id": "Dashboard", "title": "Dashboard", "url": "/" },
+    { "id": "Patients", "title": "Patients", "url": "/patients" },
+    { "id": "Practitioners", "title": "Practitioners", "url": "/practitioners" },
+    { "id": "Encounters", "title": "Encounters", "url": "/encounters" },
+    { "id": "Documents", "title": "Documents", "url": "/documents" },
+    { "id": "Notifications", "title": "Notifications", "url": "/notifications" }
+  ],
+  "systemItems": [
+    { "id": "Audit Logs", "title": "Audit Logs", "url": "/audit" },
+    { "id": "Analytics", "title": "Analytics", "url": "/analytics" },
+    { "id": "Consent", "title": "Consent", "url": "/consent" },
+    { "id": "Settings", "title": "Settings", "url": "/settings" }
+  ],
+  "userMenu": {
+    "account": "Account",
+    "billing": "Billing",
+    "signout": "Sign out"
+  }
+}

@@ -1,0 +1,85 @@
+{
+    "form": {
+        "titles": {
+            "basicInfo": "Basic Information",
+            "departmentSchedule": "Department & Schedule",
+            "additionalDetails": "Additional Details",
+            "preferences": "Preferences & Settings",
+            "uploadDocs": "Upload Documents"
+        },
+        "labels": {
+            "fullName": "Full Name",
+            "username": "Username",
+            "password": "Password",
+            "email": "Email",
+            "phone": "Mobile Number",
+            "website": "Website URL",
+            "department": "Department",
+            "date": "Select Date",
+            "time": "Select Time",
+            "description": "Description",
+            "acceptTerms": "I agree to the Terms & Conditions",
+            "gender": "Gender",
+            "skills": "Skills",
+            "profileImage": "Profile Image",
+            "documentFile": "Upload Document (PDF/DOC)"
+        },
+        "placeholders": {
+            "fullName": "Enter your full name",
+            "username": "Enter username",
+            "password": "Enter password",
+            "email": "you@example.com",
+            "date": "Select date",
+            "phone": "9876543210",
+            "website": "https://example.com",
+            "description": "Enter a short description...",
+            "skills": "Select skills",
+            "department": "Select department"
+        },
+        "errors": {
+            "fullName": "Full name is required",
+            "username": "Username is required",
+            "password": "Password is required",
+            "email": "Email is required",
+            "phone": "Phone number is required",
+            "website": "Website URL is required",
+            "department": "Department is required",
+            "date": "Date is required",
+            "time": "Time is required",
+            "description": "Description is required",
+            "acceptTerms": "You must accept terms",
+            "gender": "Please select your gender",
+            "skills": "Select at least one skill",
+            "profileImage": "Profile image is required",
+            "documentFile": "Document file is required"
+        },
+        "buttons": {
+            "submit": "Submit",
+            "reset": "Reset"
+        },
+        "options": {
+            "departments": [
+                "HR",
+                "IT",
+                "Finance",
+                "Marketing"
+            ],
+            "genders": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "skills": [
+                "React",
+                "Node.js",
+                "Python",
+                "SQL",
+                "Java"
+            ]
+        },
+        "messages": {
+            "submitted": "Submitted Successfully!",
+            "useLargeScreen": "Not appropriate for this screen size. Please use another screen."
+        }
+    }
+}

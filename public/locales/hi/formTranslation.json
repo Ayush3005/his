@@ -1,0 +1,85 @@
+{
+    "form": {
+        "titles": {
+            "basicInfo": "मूल जानकारी",
+            "departmentSchedule": "विभाग और समय सारणी",
+            "additionalDetails": "अतिरिक्त विवरण",
+            "preferences": "पसंद और सेटिंग्स",
+            "uploadDocs": "दस्तावेज़ अपलोड करें"
+        },
+        "labels": {
+            "fullName": "पूरा नाम",
+            "username": "उपयोगकर्ता नाम",
+            "password": "पासवर्ड",
+            "email": "ईमेल",
+            "phone": "मोबाइल नंबर",
+            "website": "वेबसाइट यूआरएल",
+            "department": "विभाग",
+            "date": "तारीख चुनें",
+            "time": "समय चुनें",
+            "description": "विवरण",
+            "acceptTerms": "मैं नियमों और शर्तों से सहमत हूं",
+            "gender": "लिंग",
+            "skills": "कौशल",
+            "profileImage": "प्रोफ़ाइल छवि",
+            "documentFile": "दस्तावेज़ अपलोड करें (PDF/DOC)"
+        },
+        "placeholders": {
+            "fullName": "अपना पूरा नाम दर्ज करें",
+            "username": "उपयोगकर्ता नाम दर्ज करें",
+            "password": "पासवर्ड दर्ज करें",
+            "email": "you@example.com",
+            "date": "तारीख चुनें",
+            "phone": "9876543210",
+            "website": "https://example.com",
+            "description": "संक्षिप्त विवरण दर्ज करें...",
+            "skills": "कौशल चुनें",
+            "department": "विभाग चुनें"
+        },
+        "errors": {
+            "fullName": "पूरा नाम आवश्यक है",
+            "username": "उपयोगकर्ता नाम आवश्यक है",
+            "password": "पासवर्ड आवश्यक है",
+            "email": "ईमेल आवश्यक है",
+            "phone": "फ़ोन नंबर आवश्यक है",
+            "website": "वेबसाइट यूआरएल आवश्यक है",
+            "department": "विभाग आवश्यक है",
+            "date": "तारीख आवश्यक है",
+            "time": "समय आवश्यक है",
+            "description": "विवरण आवश्यक है",
+            "acceptTerms": "आपको नियमों से सहमत होना होगा",
+            "gender": "कृपया अपना लिंग चुनें",
+            "skills": "कम से कम एक कौशल चुनें",
+            "profileImage": "प्रोफ़ाइल छवि आवश्यक है",
+            "documentFile": "दस्तावेज़ आवश्यक है"
+        },
+        "buttons": {
+            "submit": "जमा करें",
+            "reset": "रीसेट करें"
+        },
+        "options": {
+            "departments": [
+                "मानव संसाधन",
+                "आईटी",
+                "वित्त",
+                "मार्केटिंग"
+            ],
+            "genders": [
+                "पुरुष",
+                "महिला",
+                "अन्य"
+            ],
+            "skills": [
+                "React",
+                "Node.js",
+                "Python",
+                "SQL",
+                "Java"
+            ]
+        },
+        "messages": {
+            "submitted": "सफलतापूर्वक जमा किया गया!",
+            "useLargeScreen": "यह स्क्रीन आकार उपयुक्त नहीं है। कृपया दूसरी स्क्रीन का उपयोग करें।"
+        }
+    }
+}

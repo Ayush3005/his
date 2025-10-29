@@ -1,0 +1,25 @@
+{
+  "groupLabels": {
+    "main": "स्वास्थ्य सूचना प्रणाली",
+    "system": "सिस्टम"
+  },
+  "mainItems": [
+    { "id": "Dashboard", "title": "डैशबोर्ड", "url": "/" },
+    { "id": "Patients", "title": "मरीज", "url": "/patients" },
+    { "id": "Practitioners", "title": "चिकित्सक", "url": "/practitioners" },
+    { "id": "Encounters", "title": "मुलाकातें", "url": "/encounters" },
+    { "id": "Documents", "title": "दस्तावेज़", "url": "/documents" },
+    { "id": "Notifications", "title": "सूचनाएं", "url": "/notifications" }
+  ],
+  "systemItems": [
+    { "id": "Audit Logs", "title": "ऑडिट लॉग्स", "url": "/audit" },
+    { "id": "Analytics", "title": "विश्लेषण", "url": "/analytics" },
+    { "id": "Consent", "title": "सहमति", "url": "/consent" },
+    { "id": "Settings", "title": "सेटिंग्स", "url": "/settings" }
+  ],
+  "userMenu": {
+    "account": "खाता",
+    "billing": "बिलिंग",
+    "signout": "साइन आउट"
+  }
+}

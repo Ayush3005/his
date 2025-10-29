@@ -122,3 +122,67 @@ html {
     @apply bg-background text-foreground;
   }
 }
+@layer components {
+  .tiptap-editor {
+    @apply p-2 border rounded-md border-input bg-card text-foreground focus-within:ring-2 focus-within:ring-ring;
+  }
+
+  .tiptap-editor .ProseMirror {
+    @apply text-base leading-relaxed outline-none;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .tiptap-editor p { @apply mb-3; }
+  .tiptap-editor h1 { @apply text-2xl font-semibold my-2; }
+  .tiptap-editor h2 { @apply text-xl font-medium my-2; }
+
+  .tiptap-editor ul { @apply list-disc list-inside ml-4 mb-3; }
+  .tiptap-editor ol { @apply list-decimal list-inside ml-4 mb-3; }
+  .tiptap-editor li { @apply my-1; }
+
+  .tiptap-editor blockquote {
+    @apply border-l-4 pl-3 italic my-4 rounded-sm;
+    border-color: var(--color-ring);
+    background-color: color-mix(in oklch, var(--color-ring) 8%, transparent);
+  }
+
+  .tiptap-editor pre {
+    @apply bg-muted text-muted-foreground p-3 rounded-md font-mono text-sm overflow-x-auto my-3;
+  }
+
+  .tiptap-editor code {
+    @apply bg-muted px-1 rounded text-sm font-mono;
+  }
+
+  .tiptap-editor a {
+    @apply text-blue-600 underline hover:text-blue-800;
+  }
+
+  .dark .tiptap-editor {
+    @apply bg-card text-foreground border-border;
+  }
+
+  .dark .tiptap-editor blockquote {
+    background-color: color-mix(in oklch, var(--color-ring) 20%, transparent);
+  }
+}
+@layer utilities {
+  .animate-pulse-ring {
+    animation: pulse-ring 1.5s ease-out infinite;
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.0;
+  }
+}
